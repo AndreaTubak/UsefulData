@@ -1,16 +1,4 @@
 
-export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}
-
-
-systemctl status nvidia-persistenced
-
-DEVE ESSERE ATTIVO, SE NON LO È USAREIL PROSSIMO COMANDO:
-
-sudo systemctl enable nvidia-persistenced
-
-
-INSTALLAZIONE NVIDIA CONTAINER TOOLKIT
-
 
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
@@ -28,18 +16,5 @@ sudo systemctl restart docker
 
 docker run --gpus all -it tensorflow/tensorflow:latest-gpu
 
-apt-get update 
-
-apt-get install -y python3-opencv
-
-python -m pip install --upgrade pip
-
-python -m pip install opencv-python
-
-python -m pip install tensorflow
-
-python -m pip install tensorflow_hub
-
-python -m pip install matplotlib
 
 
