@@ -12,3 +12,5 @@ python -m pip install tensorflow_hub
 
 python -m pip install matplotlib
 
+python -m pip install psutil
+
