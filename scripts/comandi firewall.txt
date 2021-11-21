@@ -1,0 +1,18 @@
+COMANDI PER FIREWALL
+
+
+Per autenticarsi e poter usare l'API REST bisogna creare un tunnel al frontend
+ssh -NL 3443:api.grid5000.fr:443 atubakun@frontend
+
+4mbtcRSYKPwGTfT@
+
+
+curl -s --insecure "https://api.grid5000.fr/3.0/sites/nancy/jobs?user=atubakun&state=Running&resources=yes&pretty"
+
+
+
+curl -i --insecure https://localhost:3443/stable/sites/nancy/firewall/3246613 -d '[{"addr": "graffiti-4-ipv6.nancy.grid5000.fr", "proto": "all"}]'
+
+ 
+ 
+ 

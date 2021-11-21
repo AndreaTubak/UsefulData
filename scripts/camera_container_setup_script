@@ -1,0 +1,25 @@
+apt-get update 
+
+python -m pip install --upgrade pip
+
+apt-get install -y python3-opencv
+
+python -m pip install opencv-python
+
+python -m pip install grpcio
+
+apt install wget
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/camera.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/grpc_services_pb2.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/grpc_services_pb2_grpc.py
+
+mkdir videos
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/videos/Rec_20200125_170152_211_S.mp4
+
+mv Rec_20200125_170152_211_S.mp4 videos/
+
+

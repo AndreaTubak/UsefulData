@@ -1,10 +1,8 @@
+cd root/
+
 apt-get update 
 
-apt-get install -y python3-opencv
-
 python -m pip install --upgrade pip
-
-python -m pip install opencv-python
 
 python -m pip install tensorflow
 
@@ -13,4 +11,22 @@ python -m pip install tensorflow_hub
 python -m pip install matplotlib
 
 python -m pip install psutil
+
+python -m pip install grpcio
+
+apt install wget
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/grpc_services_pb2.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/grpc_services_pb2_grpc.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/inference.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/frame_slot.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/frame.py
+
+wget https://raw.githubusercontent.com/AndreaTubak/UsefulData/main/code/cloud.py
+
+
 
