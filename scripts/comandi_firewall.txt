@@ -6,6 +6,7 @@ ssh -NL 3443:api.grid5000.fr:443 atubakun@frontend
 
 4mbtcRSYKPwGTfT@
 
+apt install curl
 
 curl -s --insecure "https://api.grid5000.fr/3.0/sites/nancy/jobs?user=atubakun&state=Running&resources=yes&pretty"
 
@@ -13,6 +14,20 @@ curl -s --insecure "https://api.grid5000.fr/3.0/sites/nancy/jobs?user=atubakun&s
 
 curl -i --insecure https://localhost:3443/stable/sites/nancy/firewall/3246613 -d '[{"addr": "graffiti-4-ipv6.nancy.grid5000.fr", "proto": "all"}]'
 
- 
- 
- 
+
+ip addr show $(ip -6 route show | awk '/^default/ {print $5}') | awk '/inet6 .* scope global/ {print $2}'
+
+nano /etc/docker/daemon.json
+
+
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "fd00:0:0:0:1::/80"
+}
+
+sudo systemctl restart docker
+
+ip6tables -t nat -A POSTROUTING -s fd00:0:0:0:1::/80 ! -o docker0 -j MASQUERADE
+
+
+netstat -plnt
